@@ -44,7 +44,7 @@ public class SelectForm extends ElementoForm{
                     .append("</option>");
         }
 
-        sb.append("</select");
+        sb.append("</select>");
         return sb.toString();
     }
 }
