@@ -4,7 +4,7 @@ public class InputForm extends ElementoForm{
 
     private String tipo = "text";
 
-    public InputForm(String nombre) {
+    public InputForm(String nombre, int i, int i1) {
         super(nombre);
     }
 
