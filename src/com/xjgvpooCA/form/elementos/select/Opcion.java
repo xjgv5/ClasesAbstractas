@@ -39,7 +39,6 @@ public class Opcion {
     }
 
     public Opcion setSelected() {
-        this.selected = selected;
         return this;
     }
 }

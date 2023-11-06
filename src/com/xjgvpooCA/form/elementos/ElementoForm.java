@@ -28,6 +28,10 @@ abstract public class ElementoForm {
         return this;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public List<String> getErrores() {
         return errores;
     }
