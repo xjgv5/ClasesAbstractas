@@ -27,7 +27,7 @@ public class EjemploForm {
         TextAreaForm experiencia = new TextAreaForm("exp", 5, 9);
 
         SelectForm lenguaje = new SelectForm("lenguaje");
-        lenguaje.addValidador(new NoNulo());
+        lenguaje.addValidador(new NoNuloValidador());
 
         lenguaje.addOpcion(new Opcion("1", "Java").setSelected())
             .addOpcion(new Opcion("2", "Python"))
@@ -46,7 +46,7 @@ public class EjemploForm {
         saludar.setValor("Campo deshabilitado");
 
         username.setValor("john.doe");
-        password.setValor("a1b3x2");
+        password.setValor("a2");
         email.setValor("johnd.email.com");
         edad.setValor("24");
         experiencia.setValor("Mas de 10 años de experiencia...");
@@ -68,9 +68,7 @@ public class EjemploForm {
 
         elementos.forEach(e -> {
             if (!e.esValido()){
-                e.getErrores().forEach(err ->{
-                    System.out.println(e.getNombre() + " : " + err);
-                });
+                e.getErrores().forEach(System.out::println);
             }
         });
 

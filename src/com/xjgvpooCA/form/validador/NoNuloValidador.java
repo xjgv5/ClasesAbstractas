@@ -1,8 +1,8 @@
 package com.xjgvpooCA.form.validador;
 
-public class NoNulo extends Validador{
+public class NoNuloValidador extends Validador{
 
-    protected String mensaje = " el campo no puede ser nulo ";
+    protected String mensaje = " el campo %s no puede ser nulo ";
     @Override
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
