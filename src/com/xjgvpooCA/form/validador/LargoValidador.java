@@ -1,6 +1,9 @@
 package com.xjgvpooCA.form.validador;
 
-public class LargoValidador extends Validador{
+import com.xjgvpooCA.form.validador.mensaje.IMensajeFormateable;
+
+public class LargoValidador extends Validador implements IMensajeFormateable {
+
 
     protected String mensaje =" el campo %s debe tener minimo %d caracteres y maximo %d caracteeres";
     private int min;
@@ -42,7 +45,10 @@ public class LargoValidador extends Validador{
         return (largo >= min && largo <= max);
     }
 
-    public String getMensajeFormateado(String campo){
+    @Override
+    public String getMensajeFormateado(String campo) {
         return String.format(this.mensaje, campo, this.min, this.max);
     }
+
+
 }

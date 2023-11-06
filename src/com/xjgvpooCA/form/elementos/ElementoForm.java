@@ -1,7 +1,7 @@
 package com.xjgvpooCA.form.elementos;
 
-import com.xjgvpooCA.form.validador.LargoValidador;
 import com.xjgvpooCA.form.validador.Validador;
+import com.xjgvpooCA.form.validador.mensaje.IMensajeFormateable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +41,8 @@ abstract public class ElementoForm {
     public boolean esValido(){
         for (Validador v : validadores){
             if (!v.esValido(valor)){
-                if(v instanceof LargoValidador){
-                    this.errores.add(((LargoValidador) v).getMensajeFormateado(nombre));
+                if(v instanceof IMensajeFormateable){
+                    this.errores.add(((IMensajeFormateable) v).getMensajeFormateado(nombre));
                 } else {
                     this.errores.add(String.format(v.getMensaje(), nombre));
                 }
